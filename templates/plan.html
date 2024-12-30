@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Plans{% endblock title %}
+{% block content %}
+{% load static %}
+<section id="hero" class="hero section dark-background">
+
+  <img src="{%static "/assets/img/gym1.jpg" %}" alt="" data-aos="fade-in">
+
+  <div class="container">
+    <div class="row">
+      <h1 text-center>MuscleHub The GYM</h1>
+      <hr>
+      <br>
+      
+      <br>
+      <h3 text-center>CheckOut Our Plans </h3>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+{% block body %}
+{% for message in messages  %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}
+    <section id="pricing" class="pricing section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2> Choose Your Plans </h2>
+          <p>A goal without a plan is just a wish. Commit to your fitness journey today and make your dreams a reality!</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container" data-aos="zoom-in" data-aos-delay="100">
+  
+          <div class="row g-4">
+  
+            <div class="col-lg-4">
+              <div class="pricing-item">
+                <h3>Basic Plan</h3>
+                <div class="icon">
+                  <i class="bi bi-box"></i>
+                </div>
+                <h4><sup>₹</sup>750<span> / month</span></h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Access to gym equipment during off-peak hours.</span></li>
+                  <li><i class="bi bi-check"></i> <span>1 free personal training session per month.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Basic locker facilities.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Access to cardio and strength training zones.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Group fitness classes (limited slots).</span></li>
+                  
+                </ul>
+                <div class="text-center"><a href="{% url 'pricing' %}" class="buy-btn">Buy Now</a></div>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+            <div class="col-lg-4">
+              <div class="pricing-item featured">
+                <h3>premium Plan</h3>
+                <div class="icon">
+                  <i class="bi bi-rocket"></i>
+                </div>
+  
+                <h4><sup>₹</sup>1200<span> / month</span></h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Unlimited access to gym equipment during all hours.</span></li>
+                  <li><i class="bi bi-check"></i> <span>4 personal training sessions per month.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Priority locker facilities with complimentary towel service.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Access to all zones (cardio, strength, and functional training).</span></li>
+                  <li><i class="bi bi-check"></i> <span>Unlimited group fitness and yoga classes.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Free Wi-Fi access.</span></li>
+                </ul>
+                <div class="text-center"><a href="{% url 'pricing' %}" class="buy-btn">Buy Now</a></div>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+            <div class="col-lg-4">
+              <div class="pricing-item">
+                <h3>Pro Plan</h3>
+                <div class="icon">
+                  <i class="bi bi-send"></i>
+                </div>
+                <h4><sup>₹</sup>1800<span> / month</span></h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Unlimited access to gym equipment 24/7.
+                  
+                    
+                   
+                   
+                    </span></li>
+                  <li><i class="bi bi-check"></i> <span>8 personal training sessions per month.</span></li>
+                  <li><i class="bi bi-check"></i> <span>  Private locker with advanced security features.</span></li>
+                  <li><i class="bi bi-check"></i> <span>Exclusive access to spa and sauna.</span></li>
+                  <li><i class="bi bi-check"></i> <span> Nutrition consultation and custom meal plans.</span></li>
+                  <li><i class="bi bi-check"></i> <span> Priority access to new fitness programs and workshops.</span></li>
+                  <li><i class="bi bi-check"></i> <span> Guest passes (up to 4 per month).</span></li>
+                </ul>
+                <div class="text-center"><a href="{% url 'pricing' %}" class="buy-btn">Buy Now</a></div>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Pricing Section -->
+  
+{% endblock body %}

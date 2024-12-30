@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Classes{% endblock title %}
+{% block content %}
+{% load static %}
+<section id="hero" class="hero section dark-background">
+
+  <img src="{%static "/assets/img/gym1.jpg" %}" alt="" data-aos="fade-in">
+
+  <div class="container">
+    <div class="row">
+      <h1 text-center>MuscleHub The GYM</h1>
+      <hr>
+      <br>
+      <h3 text-center>Muscle Hub offers expert-led gym classes with diverse workouts to achieve your fitness goals</h3>
+      <h3>Follow Are Classes to Become The Best Of You</h3>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}
+{% block body %}
+{% load static %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Classes</h1>
+              <hr>  
+              <p class="mb-0">A gym class is a structured session designed to guide individuals through specific workouts, focusing on fitness goals like strength, endurance, or flexibility in a group or individual setting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Classes</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container">
+       
+        <div class="row gy-4">
+          {% for p in post %}
+          <div class="col-lg-3">
+            
+            <article>
+
+              <div class="post-img">
+                <img src="{{p.img.url}}" alt="" class="img-fluid">
+              </div>
+
+              <h5 class="post-category" >{{p.title}}</h5>
+
+         
+                <p>{{p.description}}</p>
+             
+
+            
+
+            </article>
+           
+          </div><!-- End post list item -->
+          {% endfor %}
+       
+        </div>
+       
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+
+  </main>
+
+  {% endblock body %}

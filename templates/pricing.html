@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Pricing{% endblock title %}
+{% block content %}
+{% load static %}
+<section id="hero" class="hero section dark-background">
+
+    <img src="{%static "/assets/img/gym1.jpg" %}" alt="" data-aos="fade-in">
+  
+    <div class="container">
+      <div class="row">
+        <div class="row justify-content-center">
+            <div class="col-md-6"> <!-- Increased width from col-md-4 to col-md-6 -->
+                <div class="card bg-light p-4">
+                    <h3 class="text-white bg-dark text-center p-3">Plan Registrations</h3>
+                     
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    
+                    <form action="{% url 'pricing' %}" method="post">
+                        {% csrf_token %}
+                        
+                        <!-- Personal Information -->
+                        <label for="full_name">Full Name:</label>
+                        <input type="text" class="form-control mb-3" name="name" placeholder="John Doe" required>
+                    
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control mb-3" name="email" value="{{request.user}}" placeholder="name@example.com" required >
+                    
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control mb-3" name="phone" placeholder="123-456-7890">
+                    
+                        <!-- Plan Details -->
+                        <label for="plan">Confirm Your  Plan:</label>
+                        <select id="plan" class="form-control mb-3" name="plan" required>
+                            <option value="">-- Select a Plan --</option>
+                            <option value="basic">Basic Plan</option>
+                            <option value="premium">Premium Plan</option>
+                            <option value="pro">Pro Plan</option>
+                        </select>
+                    
+                        <label for="start_date">Start Date:</label>
+                        <input type="date" class="form-control mb-3" name="sdate" required>
+                    
+                        <label for="duration">Duration:</label>
+                        <select id="duration" class="form-control mb-3" name="duration" required>
+                            <option value="">-- Select Duration --</option>
+                            <option value="1_month">1 Month</option>
+                            <option value="3_months">3 Months</option>
+                            <option value="6_months">6 Months</option>
+                            <option value="1_year">1 Year</option>
+                        </select>
+                    
+                       
+                    
+                        <!-- Payment Information -->
+                        <label for="payment_method">Payment Method:</label>
+                        <select id="payment_method" class="form-control mb-3" name="payment" required>
+                            <option value="">-- Select Payment Method --</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="upi">UPI/Net Banking</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    
+                       
+                        <!-- Authentication -->
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control mb-3" name="password" placeholder="Enter Password" required>
+                    
+                        
+                    
+                        <!-- Consent -->
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="terms" required>
+                            <label class="form-check-label">I agree to the terms and conditions</label>
+                        </div>
+                        <br>
+                        <div>
+                        <button type="submit" class="btn btn-dark">Register</button>
+                        </div>
+                        <br>
+                        Upgrade your plan!<a href="{% url 'upgrade'   %}">Upgrade</a>
+                    </form>
+                      
+                </div>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

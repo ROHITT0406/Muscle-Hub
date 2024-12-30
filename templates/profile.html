@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Profile Page{% endblock title %}
+
+{% block content %}
+{% load static %}
+<section id="hero" class="hero section dark-background">
+
+    <img src="{%static "/assets/img/gym1.jpg" %}" alt="" data-aos="fade-in">
+  
+    <div class="container">
+      <div class="row">
+        <h1 text-center>MuscleHub The GYM</h1>
+        <br>
+        <h3 text-center>Unleash Your Strength, Transform Your Life!</h3>
+      </div>
+    </div>
+  </section>
+
+{% for message in messages  %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}
+{% endblock content %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-white ">
+            <h3>PROFILE</h3>
+        </div>
+       
+        <div class="card-body">
+          
+            <h4 class="mb-4">User Details</h4>
+            <p><strong>Full Name:</strong> {{ user.first_name }} </p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            
+            <hr>
+            
+            <!-- Plan Details -->
+            {% if plan_details %}
+            <h4 class="mb-4">Your Plan Details</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Plan:</strong> {{ plan_details.plan }}</li>
+                <li class="list-group-item"><strong>Duration:</strong> {{ plan_details.duration }}</li>
+                <li class="list-group-item"><strong>Start Date:</strong> {{ plan_details.sdate }}</li>
+                <li class="list-group-item"><strong>Payment Method:</strong> {{ plan_details.payment }}</li>
+            </ul>
+            {% else %}
+            <div class="alert alert-warning mt-4" role="alert">
+                <p>No plan details found. <a href="{% url 'plan' %}" class="alert-link">Choose your plan</a></p>
+            </div>
+            {% endif %}
+           
+        </div>
+      
+        <div class="card-footer text-center">
+            {% if plan_details %}
+            <a href="{% url 'cancel' %}" class="btn btn-primary">Cancel Your Plan</a>
+            
+            <a href="{% url 'upgrade' %}" class="btn btn-primary">Upgrade Your Plan</a>
+            {% endif %}
+        </div>
+      
+    </div>
+</div>
+{% endblock body %}
+
+

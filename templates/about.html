@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}About Page{% endblock title %}
+{% block content %}
+{% load static %}
+<section id="hero" class="hero section dark-background">
+
+  <img src="{%static "/assets/img/gym2.webp" %}" alt="" data-aos="fade-in">
+
+  <div class="container">
+    <div class="row">
+      <h1 text-center>MuscleHub The GYM</h1>
+      <hr>
+      <br>
+      
+      <br>
+      <h3>Meet Muscle Hub</h3>
+      <h3 text-center>Unleash Your Strength, Transform Your Life!</h3>
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}
+{% block body %}
+{% load static %}
+<section id="about" class="about section light-background">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-xl-center gy-5">
+      
+      
+      <div class="col-xl-5 content">
+        <h3>About Us</h3>
+        <h2>MuscleHub</h2>
+        <p>MuscleHub is your ultimate destination for fitness and strength training, offering state-of-the-art equipment, expert trainers, and a motivating environment. Whether you're building muscle, improving endurance, or achieving weight loss goals, MuscleHub provides personalized plans and a supportive community to help you succeed. Start your journey to a healthier, stronger you at MuscleHub!</p>
+        <a href="{% url 'signup' %}" class="read-more"><span>Signup Now</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="col-xl-7">
+        <div class="row gy-4 icon-boxes">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <i class="bi bi-buildings"></i>
+              <h3>Our Mission</h3>
+              <p>Muscle Hub's mission is to inspire healthier lives through personalized fitness solutions, expert guidance, and a supportive community</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-clipboard-pulse"></i>
+              <h3> Why Choose Us?</h3>
+              <p>Choose Muscle Hub for expert trainers, personalized plans, modern facilities, and a supportive community dedicated to your success</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-command"></i>
+              <h3>Our Team</h3>
+              <p>Our team at Muscle Hub consists of certified trainers dedicated to guiding and motivating you towards achieving your fitness goals</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-graph-up-arrow"></i>
+              <h3>Our Facilities</h3>
+              <p>Muscle Hub offers modern equipment, spacious workout areas, yoga zones, and nutrition corners to support your fitness journey</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section id="stats" class="stats section dark-background mt-4">
+
+    <img src="{%static "assets/img/stats-bg.jpg"%}" alt="" data-aos="fade-in">
+
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Clients</p>
+          </div>
+        </div><!-- End Stats Item -->
+<!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Workers</p>
+          </div>
+        </div><!-- End Stats Item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span >24/7</span>
+              <p>Availability</p>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+  </section>
+{% endblock body %}

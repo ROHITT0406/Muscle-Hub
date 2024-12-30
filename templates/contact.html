@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Contact Page{% endblock title %}
+{% block content %}
+{% load static %}
+<section id="hero" class="hero section dark-background">
+
+  <img src="{%static "/assets/img/gym1.jpg" %}" alt="" data-aos="fade-in">
+
+  <div class="container">
+    <div class="row">
+      <h1 text-center>MuscleHub The GYM</h1>
+      <br>
+      <br>
+      <h3 text-center>Unleash Your Strength, Transform Your Life!</h3>
+      <br>
+      <h4>Contact Us By filling The  Below form  </h4>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+{% block body %}
+<section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>GET IN TOUCH WITH US</h2>
+     
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6">
+
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="200">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Address</h3>
+                <p>A108 Adam Street</p>
+                <p>New York, NY 535022</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="300">
+                <i class="bi bi-telephone"></i>
+                <h3>Call Us</h3>
+                <p>+91 55895548855</p>
+                <p>+91 667825444541</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="400">
+                <i class="bi bi-envelope"></i>
+                <h3>Email Us</h3>
+                <p>Musclehub@gmail.com</p>
+            
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="500">
+                <i class="bi bi-clock"></i>
+                <h3>Open Hours</h3>
+                <p>Monday - Friday</p>
+                <p>9:00AM - 10:00PM</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+        </div>
+       
+        <div class="card bg-light col-lg-6" style"border-width:1px;">
+          <form action="{% url 'contact' %}" method="post" >
+            {% csrf_token %}
+            <div class="row gy-4">
+                
+              <div class=" pt-2 col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+
+              <div class="pt-2 col-md-6 ">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+              </div>
+              
+              <div class="col-md-6 ">
+                <input type="tel" class="form-control" name="phone" placeholder="phone No" required>
+              </div>
+              <div class="col-12">
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+              </div>
+
+              <div class="col-12">
+                <textarea class="form-control" name="desc" rows="6" placeholder="Message" required></textarea>
+              </div>
+
+              <div class="col-12 text-center">
+               
+                
+                <button class="btn btn-danger" type="submit">Send Message</button>
+              </div>
+
+            </div>
+          </form>
+        </div><!-- End Contact Form -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Contact Section -->
+  {% endblock body %}
